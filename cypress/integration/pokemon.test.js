@@ -6,4 +6,10 @@ describe('Pokedex', function () {
       'Pokémon and Pokémon character names are trademarks of Nintendo.'
     )
   })
+
+  it('should go to the correct page when a pokemon is clicked', () => {
+    cy.visit('http://localhost:5000')
+    cy.contains('charmander').click()
+    cy.contains('blaze')
+  })
 })
