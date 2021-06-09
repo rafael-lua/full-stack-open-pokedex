@@ -17,3 +17,4 @@ jobs:
           heroku_email: "rafael.tragueta79@gmail.com"
           healthcheck: "https://poke-ci-test.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
