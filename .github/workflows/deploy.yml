@@ -15,3 +15,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "poke-ci-test"
           heroku_email: "rafael.tragueta79@gmail.com"
+          healthcheck: "https://poke-ci-test.herokuapp.com/health"
+          checkstring: "ok"
