@@ -31,6 +31,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Bump version and push tag
+        # Might want to use instead of version to be granted @eca2b69f9e2c24be7decccd0f15fdb1ea5906598
+        # see: https://fullstackopen.com/en/part11/keeping_green#a-note-about-using-third-party-actions
         uses: anothrNick/github-tag-action@1.33.0
         if: ${{ contains(env.COMMIT_MESSAGES, '#skip') == false }}
         env:
