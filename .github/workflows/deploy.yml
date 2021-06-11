@@ -25,6 +25,20 @@ jobs:
           rollbackonhealthcheckfailed: true
         env:
           COMMIT_MESSAGES: ${{ join(toJson(github.event.commits.*.message), ' ') }}
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,job,took
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: failure() # Pick up events even if the job fails or is canceled.
+      - uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,message,commit,author
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+        if: success() # Pick up events even if the job fails or is canceled.
   bump_version:
     if: ${{ github.event_name == 'push' }}
     runs-on: ubuntu-latest
