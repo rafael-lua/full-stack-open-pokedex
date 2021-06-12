@@ -1,3 +1,5 @@
+### LINK TO THE OTHER REPOSITORY: https://github.com/rafael-lua/teacher-dashboard
+
 Text related to the exercise 11.1:
 
 I picked the language C# as I had some experience with it in the past in game development. I have an idea of a small ASP.NET project.
